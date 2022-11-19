@@ -17,7 +17,7 @@ a {
     left: 0;
     right: 0;
     background: rgba(158, 43, 43, 0.7);
-} */
+}
 
 .header,
 .logo {
@@ -39,10 +39,21 @@ a {
 .logo__picture {
     min-width: 50%;
     max-width: 100%;
-}
+} */
 
 
 
 .menu {
+    outline: 4px solid black;
+    font-size: 0;
+}
+
+.menu__item {
+    font-size: 1rem;
+    display: inline-block;
+}
+
+.submenu__item {
+    font-size: 1rem;
     display: inline-block;
 }
