@@ -1,0 +1,81 @@
+/* header */
+
+*,
+*::after,
+*::before {
+    outline: 1px solid limegreen;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(158, 43, 43, 0.7);
+}
+
+.header,
+.menu,
+.logo {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 20%;
+    align-items: center;
+}
+
+.logo__picture-wrap {
+    width: 40%;
+}
+
+.logo__picture {
+    min-width: 50%;
+    max-width: 100%;
+}
+
+.menu__wrap {
+    width: 60%;
+}
+
+.menu__item {
+    position: relative;
+}
+
+.menu__link,
+.submenu__link {
+    padding: 2%;
+    white-space: nowrap;
+    display: block;
+    z-index: 10;
+    background-color: cadetblue;
+    transition: 3s all;
+}
+
+.menu__link:hover,
+.submenu__link:hover {
+    text-decoration: underline;
+    background-color: brown;
+    transition: 3s all;
+}
+
+.menu__item:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+}
+
+.main {
+    margin-top: 5%;
+}
