@@ -46,14 +46,35 @@ a {
 .menu {
     outline: 4px solid black;
     font-size: 0;
+    background-color: beige;
 }
 
 .menu__item {
-    font-size: 1rem;
+    font-size: 2rem;
     display: inline-block;
 }
 
 .submenu__item {
-    font-size: 1rem;
+    font-size: 2rem;
     display: inline-block;
 }
+
+.menu__link {
+    position: relative;
+}
+
+.menu__item:hover .submenu {
+    display: block;
+}
+
+.submenu:hover .dropdown__submenu {
+    display: block;
+}
+
+.submenu,
+.dropdown__submenu {
+    position: absolute;
+    display: none;
+    background-color: aquamarine;
+}
+
