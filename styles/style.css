@@ -1,80 +1,81 @@
 /* header */
 
-*,
-*::after,
-*::before {
-    outline: 1px solid limegreen;
+.header {
+    display: flex; /* сделал отображение по флексу. чтобы элементы выстроились в строку */
 }
 
-a {
-    text-decoration: none;
-}
-
-
-/* .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(158, 43, 43, 0.7);
-}
-
-.header,
 .logo {
-    width: 80%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    width: 20%;
-    align-items: center;
+    justify-content: space-around;
+    width: 30%;
 }
 
 .logo__picture-wrap {
-    width: 40%;
+    width: 60%;
 }
 
-.logo__picture {
-    min-width: 50%;
-    max-width: 100%;
-} */
-
-
-
-.menu {
-    outline: 4px solid black;
+.menu__wrap {
     font-size: 0;
-    background-color: beige;
+    width: 50%;
 }
 
 .menu__item {
-    font-size: 2rem;
-    display: inline-block;
+    position: relative; /* вот собственно относительно этого и будет выскакивать мое submenu, а не относительно body как стоит по умолчанию */
+    display: inline-block; /* способ отображение контента как для блока, так и для строки */
+    font-size: 1rem; 
+    width: 21%; /* задал ширину для каждого link. 20% чтобы каждый элемент поместился в строку без переноса. При этом учитывая % отступа от margin */
+    margin: 0%; /* сделал внешние отступы между элементами этого блока */
+    
 }
 
-.submenu__item {
-    font-size: 2rem;
-    display: inline-block;
+.menu__item:hover .submenu,
+.submenu__item:hover .dropdown-submenu {
+    display: block; /* отображает меню при наведении и оно показанно по блочному типу */
+    position: absolute; /* сделал позиционирование. чтобы этот блок показывался не относительно body как стоит по умолчанию, а относительно menu__item, т.е. родительского элемента */
+    background-color: blue;
+}
+
+.submenu__item:hover .dropdown-submenu {
+    left: 100%; /* чтобы сместить подменю относительно родителя налево */
 }
 
 .menu__link {
-    position: relative;
+    display: block; /* сделал отображение по блочному типу. Чтобы ширина контейнера была на всю ширину, а не по контенту как для строчного элемента. Таким образом можно написать 1 слово, но будет на всю ширину Link */
+    padding: 5%; /* сделал отступ внутри блока, чтобы не так близко рамка была к слову Link */
+    background-color: rgb(0, 0, 0);
+    color: white; 
+    border-bottom: 5px solid blue;
+    text-decoration: none; /* убрал подчеркивание текста для ссылок */
+    text-transform: uppercase; /* все слова текста сделал с большой буквы */
+    white-space: nowrap; /* убраз перенос на новую строку */
 }
 
-.menu__item:hover .submenu {
+.submenu__link,
+.submenu-dropdown__link {
+    color: white;
+    background-color: blue;
+    text-decoration: none; /* убрал подчеркивание ссылок */
+    padding: 5%; /* отступ внутри элемента */
     display: block;
+    border: 1px solid black;
+    display: flex; /* задал отображение дочерниъ элементов по типу флекс */
+    justify-content: space-between; /* а тут я уже поменял расположение элементов по разным краям  */
 }
 
-.submenu:hover .dropdown__submenu {
-    display: block;
+.menu__link:hover {
+    background-color: blue; /* ячейка линк меняет цвет при наведении с черного на синий */
 }
 
 .submenu,
-.dropdown__submenu {
-    position: absolute;
-    display: none;
-    background-color: aquamarine;
+.dropdown-submenu {
+    display: none; /* убрал визуальное отображение 2х подменю. По задумке они скрытны, чтобы были видны только при наведении */
+    width: 100%; /* обязательно задал ширну для подменю. Потому что стоит значение по умолчанию, а я хочу сделать больше  */
+    color: white;
+    text-transform: capitalize; /* изменил текст чтобы каждая первая буква слова была с большой буквы */
 }
+
+
+
+
+/*  */
 
